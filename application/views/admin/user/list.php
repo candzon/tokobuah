@@ -28,7 +28,6 @@
                 <!-- DataTables -->
                 <div class="card mb-3">
                     <div class="card-body">
-
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
@@ -51,10 +50,10 @@
                                                 <?= $rows->email ?>
                                             </td>
                                             <td>
-                                                <?= $rows-> nama_role?>
+                                                <?= $rows->nama_role ?>
                                             </td>
                                             <td>
-                                                <?= $rows-> nama_departement ?>
+                                                <?= $rows->nama_departement ?>
                                             </td>
                                             <td>
                                                 <?= $rows->nama_jabatan ?>
