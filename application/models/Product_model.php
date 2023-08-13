@@ -50,7 +50,7 @@ class Product_model extends CI_Model
     {
         return $this->db->get_where($this->_table, ["product_id" => $id])->row();
         // ini sama dengan :
-        // SELECT * FROM products WHERE id= $id
+        // SELECT * FROM products WHERE product_id = $id
         // method ini akan mengembalikan sebuah objek
         // yang berisi sebuah data dari row
     }
@@ -100,15 +100,16 @@ class Product_model extends CI_Model
         $config['allowed_types']        = 'gif|jpg|jpeg|png';
         $config['file_name']            = $this->product_id;
         $config['overwrite']            = true;
-        // $config['max_width']            = 1024;
-        // $config['max_height']           = 768;
+
 
         $this->load->library('upload', $config); // load library upload
         if ($this->upload->do_upload('image')) { // upload file
             return $this->upload->data("file_name"); // jika berhasil, kembalikan nama file nya
+        }else {
+            return "default.png"; // jika gagal, kembalikan nama file default nya
         }
 
-        return "default.jpg"; // jika gagal, kembalikan nama file default nya
+         
     }
 }
     
